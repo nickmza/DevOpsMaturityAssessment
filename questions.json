@@ -7,6 +7,19 @@
 			{
 				"Type" : "Banner",
 				"QuestionText" : "The goal of this questionaire is to help you assess the DevOps maturity of your team and to help you understand what might be the appropriate next steps for you on your DevOps journey.<br><br>These questions are intended to be completed for one team (typically reporting to the same line manager and usually consisting of between 5 and 15 people)."
+			},
+			{
+				"Type" : "List",
+				"QuestionText" : "Which squad are you in?",
+				"Answers" : [
+					{"Answer" : "SME Onboarding", "Score" : 0.0},
+					{"Answer" : "Mortgage", "Score" : 0.0},
+					{"Answer" : "CIB Term Loans", "Score" : 0.0},
+					{"Answer" : "CIB Payments", "Score" : 0.0},
+					{"Answer" : "Juice 4.0", "Score" : 0.0},
+					{"Answer" : "Juice PRO", "Score" : 0.0},
+					{"Answer" : "Innovative Payments", "Score" : 0.0}
+					]
 			}
 		]
 	},

@@ -98,6 +98,9 @@
 								case 'Option':
 									renderOptions($question);
 									break;
+								case 'List':
+										renderList($question);
+									break;	
 								case 'Checkbox':
 									renderCheckboxes($question);
 									break;
@@ -111,6 +114,19 @@
 				
 		
 		<?php
+	}
+
+	function renderList($question) { 
+		
+		// We render a hidden field for each checkbox to enable us to recognise if chckboxes have been unchecked
+		foreach ($question['Answers'] as $index=>$answer) { ?>
+			<div class="custom-control custom-checkbox my-2">
+			<input type="radio" name="<?=$question['QuestionText']?>" class="custom-control-input" id="<?=$answer['ID']?>" name="<?=$answer['ID']?>" <?=$answer['Value']?>>
+			<input type="hidden" name="<?=$answer['ID']?>-hidden" value="0" />
+			<label class="custom-control-label" for="<?=$answer['ID']?>" name="<?=$answer['ID']?>"><?=$answer['Answer']?></label>
+			</div>
+		<?php } 
+	
 	}
 	
 	function renderCheckboxes($question) { 
