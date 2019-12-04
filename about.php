@@ -84,7 +84,7 @@
 		  
 			<div class="row">
 				<div class="col-lg-12">
-					<p align="center"><em>This survey tool is anonymous. Data will only be show in aggregated format.</em></p>
+					<p align="center"><em>This survey tool is anonymous. Data will only be shown in aggregated format.</em></p>
 				</div>
 			</div>		  
 		
