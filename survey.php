@@ -15,10 +15,10 @@ Class Survey
 	public function __construct() 
 	{
 		// Load all the questions into session storage if we haven't already done so
-		if (!isset($_SESSION['Sections'])) {
+		//if (!isset($_SESSION['Sections'])) {
 			$json = file_get_contents("questions.json");
 			$_SESSION['Sections'] = json_decode($json, true);
-		}
+		//}
 		$this->sections = &$_SESSION['Sections'];
 		$this->SetupAnswerIDs(); // TODO: This should only be called first time we setup the Sections sesssion variable
 		$this->SaveResponses();

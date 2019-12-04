@@ -9,7 +9,7 @@
 				"QuestionText" : "The goal of this questionaire is to help you assess the DevOps maturity of your team and to help you understand what might be the appropriate next steps for you on your DevOps journey.<br><br>These questions are intended to be completed for one team (typically reporting to the same line manager and usually consisting of between 5 and 15 people)."
 			},
 			{
-				"Type" : "List",
+				"Type" : "Option",
 				"QuestionText" : "Which squad are you in?",
 				"Answers" : [
 					{"Answer" : "SME Onboarding", "Score" : 0.0},
