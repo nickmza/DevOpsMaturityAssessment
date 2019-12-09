@@ -66,7 +66,7 @@
 						<i class="fas fa-shoe-prints fa-stack-1x"></i>
 					</span>
 					<h2>2. Set goals and focus areas</h2>
-					<p class="text-justify">Each squad picks one or two areas to improve, defines metrics and a plan.</p>
+					<p class="text-justify">Each squad picks one or two areas to improve on, discusses how we will measure progress and comes up with a plan.</p>
 				</div><!-- /.col-lg-4 -->
 		  
 

@@ -8,6 +8,12 @@
 session_name('devopsassessment');
 session_start();
 
+Class SurveyWrapper{
+	public $sections;
+	public $timestamp;
+	public $id;
+}
+
 Class Survey
 {
 	public $sections;
@@ -23,9 +29,31 @@ Class Survey
 		$this->SetupAnswerIDs(); // TODO: This should only be called first time we setup the Sections sesssion variable
 		$this->SaveResponses();
 	}
+
+	private function SaveSurveyToBlob(){
+		$wrapper = new SurveyWrapper;
+		$wrapper->sections = $this->sections;
+		$wrapper->timestamp = date("Y-m-d");
+		$wrapper->id = '123';
+		$this->PostSurvey($wrapper);
+	}
+
+	private function PostSurvey($survey){
+		$ch = curl_init();
+		$post_values = json_encode( $survey ) ;
+		//curl_setopt($ch, CURLOPT_URL, 'http://requestbin.net/r/w63d5uw6');
+		curl_setopt($ch, CURLOPT_URL, 'https://prod-02.southafricanorth.logic.azure.com:443/workflows/822d61d1186d4549829bd259fe89d4fd/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=UY4QkpRVf_BewDMh-KzWBhfxBhwNNW5bjLTA968v-aM');
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $post_values);
+		$data = curl_exec($ch);
+		curl_close($ch);
+	}
 	
 	public function GenerateResultsSummary()
 	{
+		$this->SaveSurveyToBlob();
+
 		foreach ($this->sections as $section)
 		{
 			$summaryResults[$section['SectionName']] = array('MaxScore'=>0, 'Score'=>0, 'ScorePercentage'=>0);

@@ -14,11 +14,24 @@
 				"Answers" : [
 					{"Answer" : "SME Onboarding", "Score" : 0.0},
 					{"Answer" : "Mortgage", "Score" : 0.0},
-					{"Answer" : "CIB Term Loans", "Score" : 0.0},
+					{"Answer" : "CIB Lending", "Score" : 0.0},
 					{"Answer" : "CIB Payments", "Score" : 0.0},
 					{"Answer" : "Juice 4.0", "Score" : 0.0},
 					{"Answer" : "Juice PRO", "Score" : 0.0},
 					{"Answer" : "Innovative Payments", "Score" : 0.0}
+					]
+			},
+			{
+				"Type" : "Option",
+				"QuestionText" : "What is your role? (Just choose 'other' if you would rather not say.)",
+				"Answers" : [
+					{"Answer" : "Tech Lead", "Score" : 0.0},
+					{"Answer" : "Developer", "Score" : 0.0},
+					{"Answer" : "QA", "Score" : 0.0},
+					{"Answer" : "Scrum Master", "Score" : 0.0},
+					{"Answer" : "Designer", "Score" : 0.0},
+					{"Answer" : "Product Owner", "Score" : 0.0},
+					{"Answer" : "Other", "Score" : 0.0}
 					]
 			}
 		]
