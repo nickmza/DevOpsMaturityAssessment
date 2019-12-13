@@ -30,6 +30,11 @@ Class Survey
 		$this->SaveResponses();
 	}
 
+	public function InitSurvey(){
+		$json = file_get_contents("questions.json");
+		$_SESSION['Sections'] = json_decode($json, true);
+	}
+
 	private function SaveSurveyToBlob(){
 		$wrapper = new SurveyWrapper;
 		$wrapper->sections = $this->sections;

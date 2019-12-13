@@ -169,6 +169,7 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="fontawesome/css/all.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/mcb.css">
 
 		<title>DevOps Maturity Assessment</title>
 		<script src="./js/chart.bundle.min.js"></script>
@@ -194,8 +195,10 @@
 	
 	<body id="bigwrapper">
 
-	<nav class="navbar navbar-dark bg-primary fixed-top navbar-expand-md form-group" ">
-		<a href="about" class="navbar-brand">MCB Engineering Assessment</a>
+	<nav class="navbar navbar-light bg-light fixed-top navbar-expand-md form-group" ">
+		<a href="about" class="navbar-brand">
+	      <img src=".\images\mcb-logo.svg" alt="">
+    		Engineering Assessment</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
 			<span class="navbar-toggler-icon"></span>
 		</button>
