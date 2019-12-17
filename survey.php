@@ -18,6 +18,8 @@ Class Survey
 {
 	public $sections;
 
+	public $emptySections;
+
 	public function __construct() 
 	{
 		// Load all the questions into session storage if we haven't already done so
@@ -25,6 +27,7 @@ Class Survey
 			$json = file_get_contents("questions.json");
 			$_SESSION['Sections'] = json_decode($json, true);
 		}
+		$this->emptySections = array();
 		$this->sections = &$_SESSION['Sections'];
 		$this->SetupAnswerIDs(); // TODO: This should only be called first time we setup the Sections sesssion variable
 		$this->SaveResponses();
@@ -39,7 +42,7 @@ Class Survey
 		$wrapper = new SurveyWrapper;
 		$wrapper->sections = $this->sections;
 		$wrapper->timestamp = date("Y-m-d");
-		$wrapper->id = '123';
+		$wrapper->id = session_id();
 		$this->PostSurvey($wrapper);
 	}
 
@@ -52,11 +55,16 @@ Class Survey
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $post_values);
 		$data = curl_exec($ch);
+
+		$this->surveyId = $data;
+
 		curl_close($ch);
 	}
 	
 	public function GenerateResultsSummary()
 	{
+		$this->emptySections = array();
+
 		$this->SaveSurveyToBlob();
 
 		foreach ($this->sections as $section)
@@ -78,6 +86,11 @@ Class Survey
 				$summaryResults[$section['SectionName']]['ScorePercentage'] = 
 					round( $summaryResults[$section['SectionName']]['Score'] /
 							$summaryResults[$section['SectionName']]['MaxScore'] * 100);
+
+				if($summaryResults[$section['SectionName']]['ScorePercentage'] == 0)
+				{
+					array_push($this->emptySections,$section['SectionName']);
+				}
 			}
 			
 			// Do not include sections where you cannot score (i.e. MaxScore == 0)

@@ -79,8 +79,11 @@
 						'<p>The 3 areas where you have the most potential to improve are listed below, together with links to resources that you may find useful.</p>';
 			break;
 	}
+	
+	//array_push($survey->emptySections,"Default empty section"); //Uncomment to show the empty section warning.
 
 ?>
+
 	
 	<div class="container-fluid">
 		
@@ -106,11 +109,32 @@
 							uasort( $resultsSummary, function($a, $b) { return $a['ScorePercentage'] - $b['ScorePercentage']; } );
 						?>
 				
+						<!--Display an alert if there are sections where the score is ZERO.-->
+						<?php if(count($survey->emptySections) > 0): ?>
+						<div class="row">
+						<div class="col-lg-12 mt-sm-4">
+						<div class="alert alert-primary" role="alert">
+							The following sections have no score. Have you completed them?
+							<ul>
+							<?php
+								for($x = 0; $x < count($survey->emptySections); $x++)
+								{ 
+							?>
+								<li><?= $survey->emptySections[$x] ?> </li>
+							<?php		
+								}
+							?>			
+							</ul>
+						</div>
+						</div>
+						</div>
+						<?php endif; ?>
+
 						<div class="row">
 							<div class="col-lg-12 mt-1">
 								<div class="card-deck">
-									<div class="card border-primary">
-										<h5 class="card-header text-center text-white bg-primary">
+									<div class="card border-secondary">
+										<h5 class="card-header text-center text-white bg-secondary">
 											<?=array_keys($resultsSummary)[0]?>
 										</h5>
 										<div class="card-body p-1">
@@ -118,18 +142,18 @@
 											<?php RenderAdvice(array_keys($resultsSummary)[0], true) ?>
 											</div>
 										</div>
-										<div class="card-footer text-center text-white bg-primary">
+										<div class="card-footer text-center text-white bg-secondary">
 											Your score: <?=$resultsSummary[array_keys($resultsSummary)[0]]['ScorePercentage']?>%
 										</div>
 									</div>
-									<div class="card border-primary">
-										<h5 class="card-header text-center text-white bg-primary">
+									<div class="card border-secondary">
+										<h5 class="card-header text-center text-white bg-secondary">
 											<?=array_keys($resultsSummary)[1]?>
 										</h5>
 										<div class="card-body p-1">
 											<?php RenderAdvice(array_keys($resultsSummary)[1], true) ?>
 										</div>
-										<div class="card-footer text-center text-white bg-primary">
+										<div class="card-footer text-center text-white bg-secondary">
 											Your score: <?=$resultsSummary[array_keys($resultsSummary)[1]]['ScorePercentage']?>%
 										</div>
 									</div>
@@ -139,14 +163,14 @@
 					
 						<div class="row">
 							<div class="col-lg-12 mt-sm-4">
-								<div class="card border-primary">
-									<h5 class="card-header text-center text-white bg-primary">
+								<div class="card border-secondary">
+									<h5 class="card-header text-center text-white bg-secondary">
 										<?=array_keys($resultsSummary)[2]?>
 									</h5>
 									<div class="card-body p-1">
 										<?php RenderAdvice(array_keys($resultsSummary)[2], true) ?>
 									</div>
-									<div class="card-footer text-center text-white bg-primary">
+									<div class="card-footer text-center text-white bg-secondary">
 										Your score: <?=$resultsSummary[array_keys($resultsSummary)[2]]['ScorePercentage']?>%
 									</div>
 								</div>
@@ -178,7 +202,7 @@
 				pointStyle: 'circle',
 				pointRadius: 5,
 				data: <?=$data?>,
-				pointBackgroundColor: 'rgba(99,255,132,1)',
+				pointBackgroundColor: 'rgba(99,255,132,1)', 
 				backgroundColor: 'rgba(99, 255, 132, 0.2)',
 				borderColor: 'rgba(99,255,132,1)'
 				}]

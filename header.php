@@ -171,6 +171,9 @@
 		<link rel="stylesheet" href="fontawesome/css/all.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/mcb.css">
 
+		<!--MCB Font -->
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+
 		<title>DevOps Maturity Assessment</title>
 		<script src="./js/chart.bundle.min.js"></script>
 		<script src="js/jquery-3.3.1.min.js"></script>		
