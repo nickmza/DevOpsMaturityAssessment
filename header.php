@@ -171,7 +171,7 @@
 		<link rel="stylesheet" href="fontawesome/css/all.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/mcb.css">
 
-		<!--MCB Font -->
+		<!--MCB -->
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
 
 		<title>DevOps Maturity Assessment</title>
