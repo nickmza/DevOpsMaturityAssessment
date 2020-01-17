@@ -48,10 +48,12 @@
 				"Type" : "Checkbox",
 				"QuestionText" : "Which of the following are measured by the team (tick all that apply)?",
 				"Answers" : [
-					{"Answer" : "Elapsed lead time to deliver valuable changes (from initial request to production)", "Score" : 0.5},
-					{"Answer" : "Frequency of deployments into production", "Score" : 0.5},
-					{"Answer" : "Change failure rate", "Score" : 0.5},
-					{"Answer" : "Time to restore service after a failure", "Score" : 0.5}
+					{"Answer" : "Elapsed lead time to deliver valuable changes (from initial request to production)", "Score" : 0.16},
+					{"Answer" : "Frequency of deployments into production", "Score" : 0.16},
+					{"Answer" : "Change failure rate", "Score" : 0.16},
+					{"Answer" : "Time to restore service after a failure", "Score" : 0.16},
+					{"Answer" : "That the feature is realising the intended customer or business value.", "Score" : 0.16},
+					{"Answer" : "Service avilability and environment stability metrics.", "Score" : 0.2}
 					]
 			},
 			{
@@ -449,7 +451,7 @@
 			{
 				"Type" : "Option",
 				"SubCategory" : "Organisation Structure",
-				"QuestionText" : "Is the team a cross functional delivery team comprising of development, testing and operations expertise?"
+				"QuestionText" : "Is the team a cross functional delivery team comprising of design, development, testing and operations expertise?"
 			},
 			{
 				"Type" : "Option",
@@ -544,7 +546,17 @@
 			{
 				"Type" : "Option",
 				"SubCategory" : "Culture",
-				"QuestionText" : "Does the team have a feedback culture (where people are happy to quickly share negative and positive feedback)?"
+				"QuestionText" : "Does the team have a feedback culture (where people are happy to quickly share feedback regarding negative and positive behaviours)?"
+			},
+			{
+				"Type" : "Option",
+				"SubCategory" : "Culture",
+				"QuestionText" : "Do people on the team openly share their disagreement with each other during brainstorming or trying to solve problems?",
+				"Answers" : [
+					{"Answer" : "Hardly ever and only in private", "Score" : 0},
+					{"Answer" : "Fairly frequently", "Score" : 1},
+					{"Answer" : "Always and in a constructive manner", "Score" : 2}
+					]
 			}
 		]
 	},
