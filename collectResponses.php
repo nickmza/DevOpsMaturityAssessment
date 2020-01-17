@@ -43,6 +43,13 @@
 		<div class="col-xl-9 col-lg-11 m-2 pb-4 rounded text-center text-light mx-auto">
 			<h3><?=$survey->sections[$sectionIndex]['SectionName']?></h3>
 		
+			<div class="row">
+				<div class="col-lg-12 mt-sm-4">
+					<div class="alert alert-info" role="alert">
+						<h5>Section <?=$sectionIndex + 1?> of <?=count($survey->sections)?></h5>
+					</div>						
+				</div>
+			</div>
 
 <?php	
 	// Render all the question for the current section
