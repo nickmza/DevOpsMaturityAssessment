@@ -81,7 +81,7 @@
 			},
 			{
 				"Type" : "Option",
-				"QuestionText" : "Are the most experienced team members allocated last so they can help others develop cross functional skills and be free to focus on the most business critical or complex problems?"
+				"QuestionText" : "Is work distributed so that the most experienced team members have time to help others develop cross functional skills and be free to focus on the most business critical or complex problems?"
 			},
 			{
 				"Type" : "Checkbox",
@@ -131,7 +131,7 @@
 			},
 			{
 				"Type" : "Option",
-				"QuestionText" : "Do people on the team have a preference towards the most immediate (information rich) comunication method available (e.g. voice call rather than email)?",
+				"QuestionText" : "Do people on the team have a preference towards the most immediate (information rich) communication method available (e.g. voice call rather than email) when solving problems or making decisions?",
 				"Answers" : [
 					{"Answer" : "Everyone on the team does", "Score" : 1},
 					{"Answer" : "Most people on the team do", "Score" : 0.5},
